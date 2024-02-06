@@ -51,3 +51,4 @@ TODO
 * Create a hello world electron app
 * Create an electron version of cloudy calculator 
 * Create an npm package
+* Create WebMIDI to convert CC64 to held notes 
