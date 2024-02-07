@@ -15,5 +15,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "exclude": ["docs/assets"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
