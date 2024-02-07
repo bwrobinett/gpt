@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useGetTasksQuery } from "./todoApi"
+import { useGetTasksQuery } from "./randomTaskApiSlice"
 
 function getRandomItemFromArray(array: string[]) {
   return (

@@ -1,6 +1,6 @@
 import { Provider } from "react-redux"
-import { RandomTask } from "./RandomTask"
-import { store } from "./store"
+import { store } from "./app/store"
+import { RandomTask } from "./features/randomTask/RandomTask"
 
 const App = () => {
   return (
