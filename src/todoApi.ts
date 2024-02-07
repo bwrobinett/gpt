@@ -16,7 +16,6 @@ const customBaseQuery = async ({
     const text = await response.text()
     return { data: text }
   } else {
-    // Handle request error
     return { error: { status: response.status, data: await response.text() } }
   }
 }
@@ -29,7 +28,13 @@ export const api = createApi({
       query: (): { url: string } => ({ url: "todoGPT.csv" }),
       transformResponse: (response: string): string[] => {
         const tasks = Papa.parse(response, { header: false }).data as string[]
-        return tasks.slice(1).flat()
+        return (
+          tasks
+            .slice(1)
+            .flat()
+            // Remove empty strings
+            .filter(item => item.trim() !== "")
+        )
       },
     }),
   }),
