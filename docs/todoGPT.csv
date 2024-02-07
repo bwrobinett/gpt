@@ -1,4 +1,4 @@
-TODO
+# TODO
 * Ear training
 * Rhythm
 * Drums
@@ -35,8 +35,8 @@ TODO
 * Create a GPT that uses Zapier  
 * Create a chrome extension for modular web midi processing
 * Create a Logic Scriptr plugin that’s has settings controlled via web midi 
-* Create a better sampler plugin that automates like Logic’s but is simpler and easier to use, eps inspirered architecture 
-* Create a web midi thing that blocks note off if sustain is on, then sends them on sustain off 
+* Create a better sampler plugin that automates like Logic’s but is simpler and easier to use Ensoniq EPS inspirered architecture 
+* Create a web midi thing that blocks note off if sustain is on then sends them on sustain off 
 * Create a web midi thing that maps incoming midi notes to match held notes on a keyboard
 * Create web midi thing that can record all midi from a moment in time and replay 
 * Create a simple web midi cc slider 
