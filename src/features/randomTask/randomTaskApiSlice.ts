@@ -1,5 +1,10 @@
 import { createApi } from "@reduxjs/toolkit/query/react"
-import Papa from "papaparse"
+
+// The task file is a Markdown-style list, despite its .csv extension.
+// A comma is part of a prompt, not a separator between prompts.
+export function parseTasks(response: string): string[] {
+  return response.split(/\r?\n/).filter(line => line.startsWith("* "))
+}
 
 const customBaseQuery = async ({
   url,
@@ -26,16 +31,7 @@ export const api = createApi({
   endpoints: builder => ({
     getTasks: builder.query<string[], void>({
       query: (): { url: string } => ({ url: "todoGPT.csv" }),
-      transformResponse: (response: string): string[] => {
-        const tasks = Papa.parse(response, { header: false }).data as string[]
-        return (
-          tasks
-            .slice(1)
-            .flat()
-            // Remove empty strings
-            .filter(item => item.trim() !== "")
-        )
-      },
+      transformResponse: parseTasks,
     }),
   }),
 })
